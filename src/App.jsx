@@ -31,7 +31,7 @@ function App() {
   return (
 
     <>
-      <BrowserRouter basename='commerce'  >
+      <BrowserRouter  >
       <Settings/>
     <div className={`flex relative  min-h-[100dvh] ${theme} dark:bg-main-dark-bg`}>
 
