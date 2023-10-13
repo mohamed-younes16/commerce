@@ -3,7 +3,7 @@ import { ColumnDirective, ColumnsDirective,
   Group, Inject, Page, Sort,Resize,ContextMenu } from '@syncfusion/ej2-react-grids';
 import { ordersData,ordersGrid,contextMenuItems } from '../data/dummy';
 import Header from "../components/Header"
-import { allstates } from '../states/store';
+
 
 
 
@@ -22,17 +22,18 @@ const Orders = () => {
         allowSorting
         allowExcelExport
         allowPdfExport
-        
+        style={{borderRadius: '10px',overflow: 'hidden',background:"red"}}
         contextMenuItems={contextMenuItems}
         editSettings={editing}
-        
+        pageSettings={{}}
         
         
       >
         <ColumnsDirective
+
          >
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          {ordersGrid.map((item, index) => <ColumnDirective  key={index} {...item} />)}
+          {ordersGrid.map((item, index) => <ColumnDirective  displayAsCheckBox key={index} {...item} />)}
         </ColumnsDirective>
         <Inject services={[Resize, Sort, ContextMenu, Filter,Group, Page]} />
       </GridComponent>

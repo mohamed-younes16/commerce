@@ -3,7 +3,7 @@ import { SparklineComponent ,Inject,SparklineTooltip } from "@syncfusion/ej2-rea
 
 
 const Sparkline = ({data,height,width,type,id,col}) => {
- console.log(col)
+ 
   return (
     <SparklineComponent
     palette={["white"]}

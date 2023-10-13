@@ -13,7 +13,7 @@ const Pie = ({id,data,height}) => {
     legendSettings={{visible: true,textStyle:{size:"20px",color:allstates(s=>s.theme) === 'dark' ? 'white' : 'black'}
     ,shapeHeight:20,shapeWidth:20,width:"120",height:"150"}}
     height={height}
-    width='350px'
+    width='100%'
     tooltip={{enable:true}}
     id={id}>
 

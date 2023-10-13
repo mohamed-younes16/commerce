@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import "./app.css"
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
@@ -25,6 +25,7 @@ import Pyramid from './pages/Pyramid'
 import Stacked from './pages/Stacked'
 function App() {
   const open = allstates(s=>s.menu)
+ 
   const settsetting = allstates(s=>s.setsetting)
     const theme =allstates(s=>s.theme)
   return (
@@ -34,7 +35,7 @@ function App() {
       <Settings/>
     <div className={`flex relative  min-h-[100dvh] ${theme} dark:bg-main-dark-bg`}>
 
-            <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            <div className="fixed right-8 bottom-4" style={{ zIndex: '1000' }}>
                     <TooltipComponent
                       content="Settings"
                       position="Top"
@@ -46,7 +47,8 @@ function App() {
                     </TooltipComponent>
                   </div>
 
-        <div className={`fixed  bg-white dark:text-white  dark:bg-secondary-dark-bg   z-40 overflow-x-hidden     w-72 transition    min-h-screen ${open ? " translate-x-0":"-translate-x-full"}`}>
+        <div className={`fixed  bg-white dark:text-white  dark:bg-secondary-dark-bg
+          z-40 overflow-x-hidden     w-72 transition    min-h-screen ${open ? " translate-x-0":"-translate-x-full"}`}>
             <Sidebar/>
 
         </div>

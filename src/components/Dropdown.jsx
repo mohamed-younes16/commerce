@@ -12,6 +12,7 @@ const Dropdown = ({data ,id}) => {
    style={{color:theme== "light"? "black" : "white"}}
    index={0}
    popupWidth="100px"
+   width={"100px"}
    /> 
     </div>
    

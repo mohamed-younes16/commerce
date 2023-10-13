@@ -20,8 +20,8 @@ const Chat = () => {
                 <MdOutlineCancel/></button>
             </div>
                 <div className="mt-16">
-                    {chatData.map(e=>(<>
-                    <div className="border-b flex gap-4 border-gray-500 py-4 my2">
+                    {chatData.map(e=>(
+                    <div key={e.message} className="border-b flex gap-4 border-gray-500 py-4 my2">
                         <img src={e.image} className=" rounded-full h-10" alt="" />
                         <div className="text-lg">
                             <p className=" font-bold"> {e.message} </p>
@@ -30,7 +30,7 @@ const Chat = () => {
                     
                     
                     </div>
-                    </>))}
+                    ))}
                 </div>
 
 

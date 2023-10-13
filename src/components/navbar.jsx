@@ -33,7 +33,7 @@ const c = allstates(s=>s.cart)
       
 
     <div>
-        <div className="flex z-10 px-14 dark:bg-main-dark-bg  transition shadow-inner shadow-gray-500  justify-between py-4 text-3xl">
+        <div className="flex z-10 px-14 max-md:px-6 dark:bg-main-dark-bg  transition shadow-inner shadow-gray-500  justify-between py-4 text-3xl">
           <button onClick= {menuttogle} style={ {color:allstates(s=>s.color)}}> <AiOutlineMenu/></button>
         
         <div className="flex flex-1 justify-end gap-10">

@@ -8,11 +8,12 @@ import { allstates } from '../../states/store';
 const LineChart = () => {
     const theme = allstates(s=>s.theme)
 return (
-    <div className=' mt-8'>
+    <div className='max-sm:w-80 md:min-w-[500px]  mt-8'>
         <ChartComponent 
+        
     id="line-chart"
-    height="420px"
-    width='100%'
+    height="400px"
+    
     primaryXAxis={ 
         
     {...LinePrimaryXAxis,labelStyle: {color:  theme === 'dark' ? 'white' : 'black'}}

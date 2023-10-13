@@ -20,7 +20,7 @@ import LineChart from "../components/charts/LineChart";
                   
                   <div>
                     <p className="font-bold  dark:text-gray-300 text-2xl text-gray-600">Earnings</p>
-                    <p className="font-normal text-2xl">$ 63,448.78</p>
+                    <p className="font-normal text-2xl">$ 63,448.78 </p>
                         <Button cont='download'/>
 
                   </div>
@@ -71,7 +71,7 @@ import LineChart from "../components/charts/LineChart";
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap justify-center mt-10 px-10">
+                        <div className="flex flex-wrap justify-center mt-10 px-4">
                           <div className=" border-r-2 p-7 border-gray-300">
                               
                               <div className="flex mb-10 gap-8 items-center">
@@ -107,8 +107,8 @@ import LineChart from "../components/charts/LineChart";
                           
                           
                           </div>
-                          <div className="stacked">
-                            <Stacked height="400px" width="300px"  />
+                          <div className="stacked max-sm:mt-8">
+                            <Stacked height="350px" width="300px"  />
                           </div>
                         </div>
                   
@@ -117,7 +117,7 @@ import LineChart from "../components/charts/LineChart";
 
                   <div className="earnings ">
                           <div style={{backgroundColor:maincol}}
-                          className="p-5 rounded-2xl w-fit mx-auto  dark:text-black   text-white pt-12 mb-8"
+                          className="p-5 max-sm:p-3 rounded-2xl w-fit mx-auto  dark:text-black   text-white pt-12 mb-8"
 
                           >
                             <div className="flex justify-between">
@@ -143,7 +143,10 @@ import LineChart from "../components/charts/LineChart";
                                     <p className="text-2xl font-bold">$43,246</p>
                                     <div className="text-gray-600">Yearly sales</div>    
                                 </div>
-                            <Pie  data={ecomPieChartData} id="pie-1" height="150px" />
+                                <div className="max-sm:w-60">
+                                  <Pie  data={ecomPieChartData} id="pie-1" height="150px" />
+                                </div>
+                            
                         </div>
                         </div>
 
@@ -167,10 +170,10 @@ import LineChart from "../components/charts/LineChart";
 
 
 
-                            <div className="p-5 bg-white  dark:bg-secondary-dark-bg  rounded-2xl ">
-                                                  <div className="flex items-center justify-between gap-6">
+                            <div className="p-5 max-sm:p-3 bg-white  dark:bg-secondary-dark-bg  rounded-2xl ">
+                                                  <div className="flex items-center justify-between max-sm:gap-2 gap-6">
 
-                                                    <p className="font-semibod text-xl">
+                                                    <p className="font-semibod max-sm:text-lg text-xl">
                                                     Recent Transactions
                                                     </p>
                                                     <Dropdown data={dropdownData} id="drop-1" />
@@ -179,12 +182,12 @@ import LineChart from "../components/charts/LineChart";
 
                                                       <div className="flex border-b-2 pb-6 mt-8 flex-col gap-4 h-[20.8rem] overflow-auto">
                                                       {recentTransactions.map(e=>(<div className="rounded-xl items-center flex 
-                                                      cursor-pointer shadow-inner p-2 hover:shadow-xl dark:hover:shadow-slate-100 dark:shadow-md transition gap-4" key={e.title}>
-                                                          <div className=" text-2xl max-md:text-md  p-3 
+                                                      cursor-pointer shadow-inner p-2 hover:shadow-xl dark:hover:shadow-slate-100 max-sm:w-fit dark:shadow-md transition gap-4" key={e.title}>
+                                                          <div className=" text-2xl max-sm:text-xl max-md:text-md  p-3 
                                                           hover:shadow-xl  transition rounded-2xl" style={{color:e.iconColor,backgroundColor:e.iconBg}}>{e.icon}</div>
                                                             
-                                                            <div className="flex justify-between flex-1 items-center">
-                                                              <div className="mr-32">
+                                                            <div className="flex justify-between md:flex-1 items-center">
+                                                              <div className="w-48 max-sm:w-40">
                                                                 <p className=" text-lg max-md:text-md   font-semibold mb-2">{e.title}</p>
                                                                   <p>{e.desc} </p>
                                                               </div>
@@ -203,7 +206,7 @@ import LineChart from "../components/charts/LineChart";
 
 
                                               </div>
-                                              <div className="p-5  dark:bg-secondary-dark-bg  bg-white rounded-2xl w-fit mx-auto">
+                                              <div className="p-5 max-sm:p-3  dark:bg-secondary-dark-bg  bg-white rounded-2xl w-fit mx-auto">
                                                   <div className="flex items-center justify-between gap-6">
 
                                                     <p className="font-semibod text-2xl">
@@ -212,10 +215,10 @@ import LineChart from "../components/charts/LineChart";
                                                     <Dropdown data={dropdownData} id="drop-1" />
 
                                                   </div>
-                                                    <div>
+                                                    
 
                                                       <LineChart/>
-                                                    </div>
+                                                    
                                                       
                                                   
 
@@ -237,16 +240,17 @@ import LineChart from "../components/charts/LineChart";
 
                                 
                               </div>
-                                <div className="p-5 min-w-[400px] mt-10  dark:bg-secondary-dark-bg  bg-white rounded-2xl w-fit mx-auto">
+                                <div className="p-5 max-sm:p-3 max-w-[400px] mt-10  dark:bg-secondary-dark-bg  bg-white rounded-2xl w-fit mx-auto">
                                                 <div className="flex  justify-between items-center">
                                                       <span>Weekly States</span>
                                                       <span className=" text-gray-500 -translate-y-2 text-2xl  cursor-pointer">...</span>
                                                     </div>
-                                                {weeklyStats.map(e=> (<>
-                                                    <div className="flex gap-9 my-7">
-                                                  <div className=" text-3xl flex w-14 justify-center items-center rounded-full " style={{backgroundColor:e.iconBg}}> {e.icon}</div>
+                                                {weeklyStats.map(e=> (
+                                                    <div key={e.title} className="flex gap-6 my-7">
+                                                  <div className=" text-2xl flex w-14 justify-center items-center rounded-full "
+                                                  style={{backgroundColor:e.iconBg}}> {e.icon}</div>
                                                   
-                                                  <div className="flex justify-between w-64 items-center">
+                                                  <div className="flex justify-between w-60 items-center">
                                                     <div className=" text-lg">
                                                       <p className=" font-semibold">{e.title} </p>
                                                       <p className="dark:text-gray-300">{e.desc} </p>
@@ -258,7 +262,7 @@ import LineChart from "../components/charts/LineChart";
                                                     </div>
                                                     
 
-                                                </>))}
+                                                ))}
                                                 <Sparkline  id="area-sparkLine" height="190px" type="Area" data={SparklineAreaData} width="320" col="#b3f8ff52" />
                                               </div>
 
